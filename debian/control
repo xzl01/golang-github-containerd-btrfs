@@ -1,15 +1,30 @@
-Source: template-repository
-Section: unknown
+Source: golang-github-containerd-btrfs
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Arnaud Rebillout <arnaud.rebillout@collabora.com>,
+Build-Depends: debhelper-compat (= 13),
+               libbtrfs-dev | btrfs-progs (<< 4.16.1~),
+               dh-golang,
+               golang-any,
+               golang-github-pkg-errors-dev
+Standards-Version: 4.6.0
+Homepage: https://github.com/containerd/btrfs
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-containerd-btrfs
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-containerd-btrfs.git
+XS-Go-Import-Path: github.com/containerd/btrfs
+Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-containerd-btrfs-dev
+Architecture: all
+Depends: golang-github-pkg-errors-dev,
+         libbtrfs-dev | btrfs-progs (<< 4.16.1~),
+         ${misc:Depends},
+Description: Btrfs bindings for Go
+ Native Go bindings for btrfs.
+ .
+ These are in the early stages.
+ .
+ This package may not cover all the use cases for btrfs. Note that due to
+ struct alignment issues, this isn't yet fully native.

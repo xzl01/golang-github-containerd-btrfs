@@ -1,4 +1,8 @@
 #!/usr/bin/make -f
 
+# Right now, cmd only provides a 'btrfs-test' binary.
+# We want to ship only the library here, so we exclude this test.
+export DH_GOLANG_EXCLUDES := cmd/btrfs-test
+
 %:
-	dh $@
+	dh $@ --buildsystem=golang --with=golang
