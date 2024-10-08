@@ -1,3 +1,19 @@
+golang-github-containerd-btrfs (2.0.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Upload changes from experimental to unstable
+  * Update Standards-Version to 4.7.0 in d/control (no changes needed)
+
+ -- Mathias Gibbens <gibmat@debian.org>  Thu, 25 Jul 2024 11:34:15 +0000
+
+golang-github-containerd-btrfs (2.0.0-1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream version 2.0.0
+  * build depend on golang-golang-x-sys-dev
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 14 Jun 2024 19:36:31 -0400
+
 golang-github-containerd-btrfs (1.0.0-1) unstable; urgency=medium
 
   * Team upload.

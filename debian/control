@@ -2,13 +2,14 @@ Source: golang-github-containerd-btrfs
 Section: golang
 Priority: optional
 Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
-Uploaders: Arnaud Rebillout <arnaud.rebillout@collabora.com>,
+Uploaders: Arnaud Rebillout <arnaud.rebillout@collabora.com>
 Build-Depends: debhelper-compat (= 13),
-               libbtrfs-dev | btrfs-progs (<< 4.16.1~),
                dh-golang,
                golang-any,
-               golang-github-pkg-errors-dev
-Standards-Version: 4.6.0
+               golang-github-pkg-errors-dev,
+               golang-golang-x-sys-dev,
+               libbtrfs-dev | btrfs-progs (<< 4.16.1~)
+Standards-Version: 4.7.0
 Homepage: https://github.com/containerd/btrfs
 Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-containerd-btrfs
 Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-containerd-btrfs.git
@@ -19,8 +20,9 @@ Testsuite: autopkgtest-pkg-go
 Package: golang-github-containerd-btrfs-dev
 Architecture: all
 Depends: golang-github-pkg-errors-dev,
+         golang-golang-x-sys-dev,
          libbtrfs-dev | btrfs-progs (<< 4.16.1~),
-         ${misc:Depends},
+         ${misc:Depends}
 Description: Btrfs bindings for Go
  Native Go bindings for btrfs.
  .
